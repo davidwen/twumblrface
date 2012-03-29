@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% endblock nav %}
+
+{% block content %}
+<div class="content info vspaced">
+  <div style="font-size: 72px">
+    <span class="twitter-color">5</span>
+    <span class="tumblr-color">0</span>
+    <span class="facebook-color">0</span>
+  </div>
+  <div>
+    <span>Internal Server Error</span>
+  </div>
+  <div>
+    <span>Check back later!</span>
+  </div>
+
+  <div class="vspaced">
+    <span style="font-size: 18px"><a href="{% url home.views.dashboard %}">Return to twumblrface</a></span>
+  </div>
+</div>
+{% endblock content %}

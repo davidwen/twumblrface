@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="content">
+    <div id="entity-info-container" class="centered vspaced">
+
+    	{% if twitter_linked %}
+        <div class="entity-info"> 
+          <span class="confirm message">
+            Twitter is linked!
+          </span>
+          <a href="{% url home.views.unlink 'twitter' %}" class="small green button">Unlink</a>
+        </div>
+      {% else %}
+        <div class="entity-info"> 
+          <span class="error message">
+            Twitter is not linked.
+          </span>
+          <a href="{% url home.views.link 'twitter' %}" class="small red button">Link to Twitter</a>
+        </div>
+      {% endif %}
+
+      {% if profile.tumblr_base and tumblr_linked %}
+        <div class="entity-info">
+          <span class="confirm message">
+            Tumblr is linked!
+          </span>
+          <a href="{% url home.views.unlink 'tumblr' %}" class="small green button">Unlink</a>
+        </div>
+      {% else %}{% if tumblr_linked %}
+        <div class="entity-info">
+          <span class="warning message">
+            Tumblr is linked, but missing base url.
+          </span>
+          <a href="{% url home.views.account %}" class="small red button">Fix now</a>
+        </div>
+      {% else %}
+        <div class="entity-info">
+          <span class="error message">
+            Tumblr is not linked.
+          </span>
+          <a href="{% url home.views.link 'tumblr' %}" class="small red button">Link to Tumblr</a>
+        </div>
+      {% endif %}{% endif %}
+
+      {% if profile.facebook_id and facebook_linked %}
+        <div class="entity-info">
+          <span class="confirm message">
+            Facebook is linked!
+          </span>
+          <a href="{% url home.views.unlink 'facebook' %}" class="small green button">Unlink</a>
+        </div>
+      {% else %}{% if facebook_linked %}
+        <div class="entity-info">
+          <span class="warning message">
+            Facebook is linked, but missing user ID.
+          </span>
+          <a href="{% url home.views.account %}" class="small red button">Fix now</a>
+        </div>
+      {% else %}
+        <div class="entity-info"> 
+          <span class="error message">
+            Facebook is not linked.
+          </span>
+          <a href="{% url home.views.link 'facebook' %}" class="small red button">Link to Facebook</a>
+        </div>
+      {% endif %}{% endif %}
+    </div>
+    <div id="post-container" class="centered">
+    	<form action="{% url home.views.post %}" method="post"> {% csrf_token %}
+    	  <textarea id="post" name="post" rows="10"></textarea>
+        <div style="text-align: center;">
+          <span id="post-to">Post to:</span>
+          <span class="entity-checkbox twitter-color">
+            <label for="twitterCheckbox"><b>Twitter</b></label>
+            <input type="checkbox" name="postTo" value="twitter" id="twitterCheckbox" {% if twitter_linked %}checked{% else %}disabled{% endif %} />
+          </span>
+          <span class="entity-checkbox tumblr-color">
+            <label for="tumblrCheckbox"><b>Tumblr</b></label>
+            <input type="checkbox" name="postTo" value="tumblr" id="tumblrCheckbox" {% if profile.tumblr_base and tumblr_linked %}checked{% else %}disabled{% endif %} />
+          </span>
+          <span class="entity-checkbox facebook-color">
+            <label for="facebookCheckbox"><b>Facebook</b></label>
+            <input type="checkbox" name="postTo" value="facebook" id="facebookCheckbox" {% if profile.facebook_id and facebook_linked %}checked{% else %}disabled{% endif %} />
+          </span>
+        </div>
+    	  <input type="submit" class="large green button wide" style="margin-top: 10px;" value="Post Message">
+    	</form>
+    </div>
+  </div>
+{% endblock content %}

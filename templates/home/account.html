@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="content">
+    <div class="narrow centered vspaced">
+      <form method="post" action="{% url home.views.save_profile %}">
+        {% csrf_token %}
+        <div class="input">
+          <div>
+            <span class="label">Tumblr URL: </span>
+            <span id="tumblr_url_expand" class="link">What's this?</span>
+          </div>
+          <div>
+            <input name="tumblr_base" value="{{ profile.tumblr_base }}">
+          </div>
+        </div>
+        <div id="tumblr_url_info" class="moreinfo">
+          The Tumblr URL is just that: the URL of your Tumblr. Go to your Tumblr, copy and paste the URL into that box up there, and save that bad boy. It'll often look something like <br><br>http://myblog.tumblr.com<br><br>If you directed it to another domain, it might look something like <br><br>http://blog.dwen.me<br><br> &lt;/shameless plug&gt;. Twumblrface needs this to be able to post on Tumblr.
+        </div>
+        <div class="input">
+          <div>
+            <span class="label">Facebook Username: </span>
+            <span id="facebook_id_expand" class="link">What's this?</span>
+          </div>
+          <div>
+            <input name="facebook_id" value="{{ profile.facebook_id }}">
+          </div>
+        </div>
+        <div id="facebook_id_info" class="moreinfo">
+          Your Facebook username is what comes after 'www.facebook.com/' when you go to your profile page. For example, if your Facebook profile's URL is <br><br>http://www.facebook.com/foobar<br><br> then you'd want to put 'foobar' in the box above and hit save. Twumblrface needs this to be able to post status updates on Facebook.
+        </div>
+        <input type="submit" class="large green button wide" style="margin-top: 10px;" value="Save">
+      </form>
+    </div>
+  </div>  
+{% endblock content %}
+
+{% block scripts %}
+  {{ block.super }}
+  <script>
+    function toggle_moreinfo(moreinfo_id) {
+      $('#' + moreinfo_id).toggle('slow')
+    }
+
+    $(function() {
+      $('#tumblr_url_expand').click(function() {
+        toggle_moreinfo('tumblr_url_info');
+      });
+
+      $('#facebook_id_expand').click(function() {
+        toggle_moreinfo('facebook_id_info');
+      })
+    });
+  </script>
+{% endblock scripts %}

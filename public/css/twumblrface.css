@@ -1,0 +1,204 @@
+body {
+  background-color: #8b9dc3;
+}
+
+nav {
+  height: 30px;
+  margin: 10px auto;
+  text-align: center;
+  width: 480px;
+}
+
+nav ul {
+  height: 100%;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #FFF;
+}
+
+nav ul li {
+  display: list-item;
+  float: left;  
+  font-size: 18px;
+  font-weight: bold;
+  height: 100%;
+  width: 160px;
+}
+
+.twitter-color {
+  color: #9ae4e8;
+}
+
+.tumblr-color {
+  color: #2c4762;
+}
+
+.facebook-color {
+  color: #3b5998;
+}
+
+.vspaced {
+  margin-top: 80px;
+}
+
+div.standard {
+  width: 480px;
+}
+
+/** Log In **/
+
+div#login-header {
+  margin-top: 40px;
+}
+
+div.icon-container {
+  float: left;
+  text-align: center;
+  width: 33%;
+}
+
+div.icon-container.middle {
+  width: 34%;
+}
+
+div#login-links {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.login-text {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/** Account **/
+
+.moreinfo {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+/** Dashboard **/
+
+div#entity-info-container {
+  width: 370px;
+}
+
+div.entity-info {
+  margin: 2px 0;
+}
+
+div.entity-info .message {
+  display: inline-block;
+  width: 260px;
+}
+
+div.entity-info .button {
+  display: inline-block;
+  padding-left: 7px;
+  padding-right: 7px;
+  width: 90px;
+}
+
+#post-container {
+  width: 480px;
+}
+
+#post-container textarea {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 474px;
+}
+
+#post-to {
+  font-weight: bold;
+}
+
+span.entity-checkbox {
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+div.narrow div.input input {
+  font-size: 18px;
+  width: 294px;
+}
+
+#twumblrface-description {
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 18px;
+}
+
+/* =============
+   Media Queries
+   ============= */
+
+@media only screen and (max-width: 480px) {
+  nav {
+    width: 100%;
+  }
+
+  nav ul li {
+    font-size: 14px;
+    width: 33.33%;
+  }
+
+  div.standard {
+    width: 300px;
+  }
+
+  .login-text {
+    font-size: 13px;
+  }
+
+  #twumblrface-description {
+    font-size: 13px;
+  }
+    
+  div#entity-info-container {
+    width: 300px;
+  }
+
+  div.entity-info .message {
+    font-size: 10px;
+    width: 204px;
+  }
+     
+  div.entity-info .button {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  #post-to {
+    font-size: 10px;
+  }
+
+  span.entity-checkbox {
+    font-size: 10px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+      
+  #post-container {
+    width: 300px;
+  }   
+
+  #post-container textarea {
+    width: 294px;
+  }
+
+  .vspaced {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  div.narrow div.input input {
+    width: 281px;
+  }
+}

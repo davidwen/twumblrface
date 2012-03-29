@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block nav %}
+{% endblock nav %}
+
+{% block content %}
+<div class="content">
+  <div class="standard centered">
+    <div id="login-header" class="info">Log In</div>
+    <div id="login-links">
+      <div class="icon-container">
+        <a href="{% url home.views.link 'twitter' %}">
+          <img src="/public/img/twitter64.png">
+        </a>
+        <div class="login-text twitter-color">with twitter</div>
+      </div>
+      <div class="icon-container middle">
+        <a href="{% url home.views.link 'tumblr' %}">
+          <img src="/public/img/tumblr64.png">
+        </a>
+        <div class="login-text tumblr-color">with tumblr</div>
+      </div>
+      <div class="icon-container">
+        <a href="{% url home.views.link 'facebook' %}">
+          <img src="/public/img/facebook64.png">
+        </a>
+        <div class="login-text facebook-color">with facebook</div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <p id="twumblrface-description">
+      Twumblrface allows you to easily post updates to your Twitter, Tumblr, Facebook account from one spot. Just link your accounts with a few clicks and you're set to go!
+    </p>
+  </div>
+</div>
+{% endblock content %}

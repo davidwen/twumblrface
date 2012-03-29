@@ -1,0 +1,16 @@
+# Copy this file to oauth_keys.py
+# Then, add your application's oauth keys and secrets for twitter, tumblr, and facebook.
+
+twitter_key = 'twitter_key'
+twitter_secret = 'twitter_secret'
+
+tumblr_key = 'tumblr_key'
+tumblr_secret = 'tumblr_secret'
+
+facebook_key = 'facebook_key'
+facebook_secret = 'facebook_secret'
+
+# Base site URL: The site that this application is being hosted at.
+# This should match the "Site URL" found in your facebook app settings
+# after you register this application as a facebook app (without a trailing slash)
+base_url = 'http://twumblrface.com'

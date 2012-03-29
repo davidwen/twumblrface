@@ -1,0 +1,21 @@
+#Local Django settings for twumblrface project.
+#Copy this to settings_local.py to override default settings with actual settings
+
+ADMINS = (
+    ('Real Admin', 'realadmin@admin.com')
+)
+
+MANAGERS = ADMINS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mysqlname',
+        'USER': 'mysqluser',
+        'PASSWORD': 'mysqlpassword',
+        'HOST': '',
+        'PORT': '',
+    }
+}
+
+SECRET_KEY = 'actual-secret-key'
