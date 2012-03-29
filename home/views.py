@@ -17,7 +17,19 @@ import urlparse
 import urllib
 import urllib2
 
-from oauth_settings import *
+# Override these variables in oauth_settings.py
+twitter_key = 'twitter_key'
+twitter_secret = 'twitter_secret'
+tumblr_key = 'tumblr_key'
+tumblr_secret = 'tumblr_secret'
+facebook_key = 'facebook_key'
+facebook_secret = 'facebook_secret'
+base_url = 'http://twumblrface.example'
+
+try:
+	from oauth_settings import *
+except ImportError:
+	pass
 
 twitter = OAuthEntity( \
 	app='TWITTER', \
