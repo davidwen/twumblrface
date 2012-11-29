@@ -37,7 +37,7 @@ twitter = OAuthEntity( \
 	consumer_secret=twitter_secret, \
 	request_token_url='http://twitter.com/oauth/request_token', \
 	access_token_url='http://twitter.com/oauth/access_token', \
-	authorize_url='http://twitter.com/oauth/authenticate', \
+	authorize_url='http://twitter.com/oauth/authorize', \
 	short_post_url='https://api.twitter.com/1/statuses/update.json')
 
 tumblr = OAuthEntity( \
