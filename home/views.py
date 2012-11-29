@@ -188,9 +188,7 @@ def authenticate_entity(request, app):
 					success = entity.app.capitalize() + ' linked.'
 	elif app == 'TWITTER' or app == 'TUMBLR':
 		entity = entities[app]
-		method = "GET"
-		if (entity.app == 'TUMBLR'):
-			method = "POST"
+		method = "POST"
 		token = oauth.Token(request.session['request_token']['oauth_token'], request.session['request_token']['oauth_token_secret'])
 		client = oauth.Client(entity.consumer, token)
 		query = 'oauth_verifier=' + request.GET['oauth_verifier']
